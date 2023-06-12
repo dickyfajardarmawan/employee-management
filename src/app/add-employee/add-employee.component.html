@@ -1,0 +1,85 @@
+<div class="container my-5">
+    <h1>Add Employee</h1>
+    <div class="alert alert-primary" role="alert" *ngIf="dataSuccess">
+       Data Berhasil ditambahkan
+    </div>
+    <form style="max-width: 600px;">
+        <div class="mb-3">
+            <label class="form-label">Username</label>
+            <input type="text" class="form-control" [(ngModel)]="username" name="username">
+            <div class="text-danger" *ngIf="submitted && username == ''">
+                Username Cannot Be Empty
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">First Name</label>
+            <input type="text" class="form-control" [(ngModel)]="firstname" name="firstname">
+            <div class="text-danger" *ngIf="submitted && firstname == ''">
+                First Name Cannot Be Empty
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Last Name</label>
+            <input type="text" class="form-control" [(ngModel)]="lastname" name="lastname">
+            <div class="text-danger" *ngIf="submitted && lastname == ''">
+                Last Name Cannot Be Empty
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input type="email" class="form-control" [(ngModel)]="email" name="email">
+            <div class="text-danger" *ngIf="errorEmail">
+                {{textErrorEmail}}
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Birth Date</label>
+            <input type="date" class="form-control" [(ngModel)]="birthDate" name="birthDate">
+            <div class="text-danger" *ngIf="submitted && birthDate == ''">
+                Birth Date Cannot Be Empty
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Basic Salary</label>
+            <input type="number" class="form-control" [(ngModel)]="basicSalary" name="basicSalary">
+            <div class="text-danger" *ngIf="submitted && basicSalary == ''">
+                Basic Salary Cannot Be Empty
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Status</label>
+            <input type="text" class="form-control" [(ngModel)]="status" name="status">
+            <div class="text-danger" *ngIf="submitted && status == ''">
+                Status Cannot Be Empty
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Group</label>
+            <select class="form-control" [(ngModel)]="selectedGroup" name="selectedGroup">
+                <option value="">-- Select Group --</option>
+                <option value="PT ABC">PT ABC</option>
+                <option value="PT CDF">PT CDF</option>
+                <option value="PT FER">PT FER</option>
+                <option value="PT GDW">PT GDW</option>
+                <option value="PT VSW">PT VSW</option>
+                <option value="PT VCR">PT VCR</option>
+                <option value="PT NRF">PT NRF</option>
+                <option value="PT WFT">PT WFT</option>
+                <option value="PT ACD">PT ACD</option>
+                <option value="PT CFG">PT CFG</option>
+            </select>
+            <div class="text-danger" *ngIf="submitted && selectedGroup == ''">
+                Please Select Group
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" rows="3" [(ngModel)]="description" name="description"></textarea>
+            <div class="text-danger" *ngIf="submitted && description == ''">
+                Description Cannot Be Empty
+            </div>
+        </div>
+        <button type="button" (click)="onCancel()" class="btn btn-secondary me-3">Cancel</button>
+        <button type="button" (click)="onAddEmployee()" class="btn btn-primary">Save</button>
+    </form>
+</div>

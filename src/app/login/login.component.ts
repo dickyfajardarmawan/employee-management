@@ -8,12 +8,12 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   email: any = ''
-  password: any = ''
   validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   statusEmail = false
-  statusPassword = false
   errorEmail = false
   textErrorEmail = ''
+  password: any = ''
+  statusPassword = false
   errorPassword = false
 
   constructor(private router: Router) { }
@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
       this.statusPassword = true
     }
     if (this.statusEmail && this.statusPassword) {
-      console.log('sukses login')
       this.router.navigate(['employee-list'])
     }
   }
