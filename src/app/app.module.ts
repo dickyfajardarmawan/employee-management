@@ -11,13 +11,16 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { AddEmployeeComponent } from './add-employee/add-employee.component';
+import { EditEmployeeComponent } from './edit-employee/edit-employee.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { CurrencyPipe } from '@angular/common';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'employee-list', component: EmployeeListComponent },
   { path: 'add-employee', component: AddEmployeeComponent },
+  { path: 'edit-employee', component: EditEmployeeComponent },
   { path: 'employee-detail', component: EmployeeDetailComponent },
 ];
 
@@ -27,6 +30,7 @@ const routes: Routes = [
     LoginComponent,
     EmployeeListComponent,
     AddEmployeeComponent,
+    EditEmployeeComponent,
     EmployeeDetailComponent
   ],
   imports: [
